@@ -6,4 +6,4 @@
 
 ## Implementation
 * [REST](Rest.md): back end REST service
-* [Piwik](Piwik.md): usage statistics via [Matomo](http://matomo.org/)
+* [Matomo (former Piwik)](Piwik.md): usage statistics via [Matomo](http://matomo.org/)
