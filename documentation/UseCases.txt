@@ -1,0 +1,3 @@
+Use cases for the LR Switchboard are currently compiled at:
+
+https://docs.google.com/document/d/1LpkkJNevgpF1tLKHZpAukOdwiqo88N53jhD7Fw7CuBg
