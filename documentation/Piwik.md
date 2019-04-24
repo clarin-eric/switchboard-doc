@@ -1,24 +1,29 @@
-[//]: # "C. Zinn, Time-stamp: <2018-07-26 15:28:50 (zinn)>"
+[//]: # "C. Zinn, Time-stamp: <2019-04-24 13:51:32 (zinn)>"
 
 # Piwik reporting
 
 - Piwik is initialized in App.jsx, the main component of the switchboard.
 
-- Piwik gets a report whenever a Tool or WebService is invoked. This happens in Tool.jsx where the
-  invoked tool/web service is recorded
+- records tool invocation. This happens in Tool.jsx, invokeTool(URL).
 
+- records whether users change the mimetype/language after it is automatically set by
+  switchboard, see Resource.jsx, setLanguage and setMimetype
 
+- records pressing of Show Tools button ("dashboard).
+
+- records textual input in DropArea.jsx (when pressing submit, see handeTextInputSubmit)
+
+- records URL input in DropArea.jsx (when pressing submit, see handeUrlInputSubmit)
+
+- records file drops in DropArea.jsx, see onDrop
+
+- records entering the switchboard in DropArea.jsx/render
+ 
 
 # Plans for future reporting 
 
 ### From where do users come
 - report route invocation /vlo or /vcr or /fcs or /b2drop or /d4science
-
-### How do they file their input with direct access to LRS
-- in 'standalone mode', report 
-  - file drop OR
-  - text drop OR
-  - URL  drop
 
 ### Quality of resoure characteristics detection
 - report resource-specific information 
@@ -29,7 +34,5 @@
 - record whether there's a mismatch between VLO-passed information on mimetype/language
   and such information obtained from Apache Tika
 
-- record whether users change the mimetype/language after it is automatically set by
-  switchboard 
 
   
