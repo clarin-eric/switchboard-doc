@@ -12,7 +12,9 @@ The following information can/has to be passed on to the Switchboard:
 | *mimetype* | Media type (aka MIME type) of the potentially processable resource | No |
 | *language* | Three letter language code ([ISO 639-3](https://iso639-3.sil.org/)) of the content language of the potentially processable resource | No |
 
-## URL pattern
+## Client redirect
+
+### URL pattern
 ```
 {switchboard base URL}#/{origin}/{URI}[/{mimetype}[/{language}]]
 ```
@@ -30,3 +32,13 @@ The following information can/has to be passed on to the Switchboard:
 * https://switchboard.clarin.eu/#/vlo/https%3A%2F%2Fwww.clarin.eu
 * https://switchboard.clarin.eu/#/vlo/https%3A%2F%2Fwww.clarin.eu%2Fcmdi/application%2Fhtml
 * https://switchboard.clarin.eu/#/vlo/http%3A%2F%2Fxmlns.com%2Ffoaf%2Fdoc%2FREADME.txt/text%2Fplain/eng
+
+## User interface
+
+The [VLO](https://vlo.clarin.eu) and [VCR](https://collections.clarin.eu) provide access to the switchboard through their resources listings.
+
+### VCR
+[[../images/integration-example-vcr.png]]
+
+### VLO
+[[../images/integration-example-vlo.png]]
