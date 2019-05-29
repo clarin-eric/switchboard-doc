@@ -42,5 +42,7 @@ The VCR provides a drop down menu for each resource in the resources table of a 
 ![VCR](../images/integration-example-vcr.png)
 
 ### VLO
-Very much like the VCR, the VLO provides a drop down menu for each resource in the links section of a record page
+Very much like the VCR, the VLO provides a drop down menu for each resource in the links section of a record page:
 ![VLO](../images/integration-example-vlo.png)
+
+The VLO web app is implemented using [Apache Wicket](https://wicket.apache.org/). The UI part of the Switchboard connection is implemented in the [`ResourceLinksPanelItem`](https://github.com/clarin-eric/VLO/blob/master/vlo-web-app/src/main/java/eu/clarin/cmdi/vlo/wicket/panels/record/ResourceLinksPanelItem.java) class, where a [`LanguageResourceSwitchboardLink`](https://github.com/clarin-eric/VLO/blob/master/vlo-web-app/src/main/java/eu/clarin/cmdi/vlo/wicket/components/LanguageResourceSwitchboardLink.java) is instantiated.
