@@ -38,7 +38,9 @@ The following information can/has to be passed on to the Switchboard:
 The [VLO](https://vlo.clarin.eu) and [VCR](https://collections.clarin.eu) provide access to the switchboard through their resources listings.
 
 ### VCR
-[[../images/integration-example-vcr.png]]
+The VCR provides a drop down menu for each resource in the resources table of a collection. See for example [hdl:11372/VC-1002](http://hdl.handle.net/11372/VC-1002)
+![VCR](../images/integration-example-vcr.png)
 
 ### VLO
-[[../images/integration-example-vlo.png]]
+Very much like the VCR, the VLO provides a drop down menu for each resource in the links section of a record page
+![VLO](../images/integration-example-vlo.png)
