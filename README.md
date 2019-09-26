@@ -1,12 +1,6 @@
 # LRSwitchboard-doc
 
-This repository serves to hold all documentation related to the CLARIN Language Resource Switchboard, see
-
-```https://github.com/clarin-eric/LRSwitchboard ```
-
-and
-
-```https://github.com/clarin-eric/LRSwitchboard-rest ```
+This repository serves to hold all documentation related to the [Language Resource Switchboard[(https://github.com/clarin-eric/switchboard), see
 
 # [Publications](./publications)
 
