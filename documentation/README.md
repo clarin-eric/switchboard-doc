@@ -7,3 +7,6 @@
 
 ## Implementation
 * [Matomo (former Piwik)](Piwik.md): usage statistics via [Matomo](http://matomo.org/)
+
+## Integration
+* [Integration instructions for resource providers](IntegrationProvider.md)
