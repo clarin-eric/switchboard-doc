@@ -44,6 +44,6 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 * `mapping`: A JSON object mapping the descriptive parameters from the `parameters` section to the actual parameters required by the web tool. See the [Tool Call API](./ToolCallAPI.md) for more information.
 
 
-For details on how a tool is matched for a specific resource, see the [./ToolMatching.md](./ToolMatching.md) document.
+For details on how a tool is matched for a specific resource, see the [Tool Matching](./ToolMatching.md) document.
 
-For details on how a tool is actually invoked when selected by the user, see the [./ToolCallAPI.md](./ToolCallAPI.md) document.
+For details on how a tool is actually invoked when selected by the user, see the [Tool Call API](./ToolCallAPI.md) document.
