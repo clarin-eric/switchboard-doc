@@ -1,0 +1,16 @@
+{
+  "name": "demotool",
+  "version": "1.0.0",
+  "description": "Simple Tool for demonstrating integration with the Switchboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emanuel Dima",
+  "license": "GPL-3.0-or-later",
+  "repository": "https://github.com/clarin-eric/switchboard-doc",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.1"
+  }
+}
