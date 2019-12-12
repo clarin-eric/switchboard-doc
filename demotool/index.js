@@ -7,6 +7,8 @@ const port = 3000;
 
 app.use(express.static('public'));
 
+app.listen(port, () => console.log(`Example app listening on port ${port}`));
+
 app.post('/splitter', (req, res) => {
 	const form = new formidable.IncomingForm();
 	form.parse(req, (err, fields, files) => {
@@ -19,20 +21,16 @@ app.post('/splitter', (req, res) => {
 	})
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}`));
-
-
 function return_tokenized_text(res, file) {
-	res.writeHead(200, {'content-type': 'text/plain'});
-	fs.readFile(file.path, function (err, data) {
+	fs.readFile(file.path, (err, data) => {
 		const text = data
 			.toString()
 			.split(/\s+/)
 			.join("\n");
+		res.writeHead(200, {'content-type': 'text/plain'});
         res.end(text);
 	});
 }
-
 
 
 
@@ -46,4 +44,3 @@ function return_tokenized_text(res, file) {
 // 		return_tokenized_text(res, file);
 // 	});
 // });
-
