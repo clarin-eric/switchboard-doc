@@ -1,0 +1,13 @@
+{
+  "name": "demotool",
+  "version": "1.0.0",
+  "description": "Simple Tool for demonstrating integration with the Switchboard",
+  "main": "index.js",
+  "author": "Emanuel Dima",
+  "license": "GPL-3.0-or-later",
+  "repository": "https://github.com/clarin-eric/switchboard-doc/demotool",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.1"
+  }
+}
