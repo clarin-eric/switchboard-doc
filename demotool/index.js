@@ -36,10 +36,10 @@ function return_tokenized_text(res, file) {
 
 
 // app.get('/switchboard', (req, res) => {
-// 	const https = require('https');
+// 	const http = require('https');
 // 	const fileurl = req.query.input;
 // 	const file = fs.createWriteStream("tmp.txt");
-// 	const request = https.get(fileurl, response => {
+// 	const request = http.get(fileurl, response => {
 // 		response.pipe(file);
 // 		return_tokenized_text(res, file);
 // 	});
