@@ -23,11 +23,11 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `version`: The (semantic) version of the tool, e.g. "v1.0".
 
-* `authentication`: Should be either `"no"` (for publicly available tools) or a string describing the authentication procedure.
+* `authentication`: Should be either `"no"` (for publicly available tools) or a string describing the authentication procedure. This field supports [GitHub Markdown][1], except for the HTML blocks.
 
-* `licence`: Should be either `null` (meaning that the licence information is not specified) or a string describing the tool's licence.
+* `licence`: Should be either `null` (meaning that the licence information is not specified) or a string describing the tool's licence. This field supports [GitHub Markdown][1], except for the HTML blocks.
 
-* `description`: A short (less than 100 words) description of the tool.
+* `description`: A short (less than 100 words) description of the tool. This field supports [GitHub Markdown][1], except for the HTML blocks.
 
 * `languages`: A JSON array of ISO 639-3 language identifiers, specifying the input data languages that the tool supports. E.g. `["deu"]` for German.
 
@@ -47,3 +47,7 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 For details on how a tool is matched for a specific resource, see the [Tool Matching](./ToolMatching.md) document.
 
 For details on how a tool is actually invoked when selected by the user, see the [Tool Call API](./ToolCallAPI.md) document.
+
+
+
+[1]: https://github.github.com/gfm
