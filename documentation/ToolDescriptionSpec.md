@@ -11,7 +11,7 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `name`: A short name uniquely describing the tool, e.g. "UDPipe".
 
-* `logo`: The name of the logo file, e.g. "weblicht.jpg". The logo files are stored in the [switchboard-tool-registry](https://github.com/clarin-eric/switchboard-tool-registry) repository, in the "logos" directory.
+* `logo`: The name of the logo file, e.g. "weblicht.jpg". The logo files must be stored in the [switchboard-tool-registry](https://github.com/clarin-eric/switchboard-tool-registry) repository, in the "logos" directory.
 
 * `homepage`: The tool's home page. It should not the actual tool url, but a landing page for a user wanting to know more about the tool. E.g.: [https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page).
 
