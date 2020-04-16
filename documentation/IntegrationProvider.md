@@ -19,9 +19,9 @@ The following information can/has to be passed on to the Switchboard:
 {switchboard base URL}#/{origin}/{URI}[/{mimetype}[/{language}]]
 ```
 
+* All values **have to be URL encoded**.
 * For production, `{switchboard base URL}` is `https://switchboard.clarin.eu`
-* All values have to be URL encoded.
-* **NOTE**: currently __only the following values__ are supported for *origin*:
+* An arbitrary identifying string for the calling service can be chosen for `{origin}`. The following are currently in use (non-exhaustive list):
   * `vlo`
   * `vcr`
   * `fcs`
@@ -46,3 +46,7 @@ Very much like the VCR, the VLO provides a drop down menu for each resource in t
 ![VLO](../images/integration-example-vlo.png)
 
 The VLO web app is implemented using [Apache Wicket](https://wicket.apache.org/). The UI part of the Switchboard connection is implemented in the [`ResourceLinksPanelItem`](https://github.com/clarin-eric/VLO/blob/master/vlo-web-app/src/main/java/eu/clarin/cmdi/vlo/wicket/panels/record/ResourceLinksPanelItem.java) class, where a [`LanguageResourceSwitchboardLink`](https://github.com/clarin-eric/VLO/blob/master/vlo-web-app/src/main/java/eu/clarin/cmdi/vlo/wicket/components/LanguageResourceSwitchboardLink.java) is instantiated.
+
+## Video tutorial
+
+On the [CLARIN ERIC Youtube channel](https://www.youtube.com/channel/UCJPks1mzisqsS4NrBFKIWag), you can find the video tutorial ["Connecting resource providers to the Language Resource Switchboard"](https://www.youtube.com/watch?v=YX5oGr949bQ).
