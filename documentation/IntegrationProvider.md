@@ -50,6 +50,18 @@ application
 * `language` is optional and can specify the language of the resource as a three
 letter language code ([ISO 639-3](https://iso639-3.sil.org/))
 
+A full example of a HTML element with a Switchboard event handler:
+````html
+<li id="id3b6">
+    <a href="javascript:;" onclick="
+        showSwitchboardPopup({alignSelector:'#id3b6', alignRight:true},
+            {url:'http://hdl.handle.net/10932/00-01B8-AF6C-BC6A-0601-D'});">
+        <i class="glyphicon glyphicon-open-file" aria-hidden="true"></i>
+        <span>Switchboard</span>
+    </a>
+</li>
+````
+
 ## User interface example
 
 This is how the Switchboard popup looks like when integrated in the 
