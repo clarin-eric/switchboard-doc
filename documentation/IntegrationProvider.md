@@ -1,8 +1,8 @@
-# Integrating a resource provider 
+# Integrating a resource provider
 
-There are two ways a resource provider can connect to the Switchboard: 
+There are two ways a resource provider can connect to the Switchboard:
 
-1. by showing a Switchboard site popup integrated in the resource provider's 
+1. by showing a Switchboard site popup integrated in the resource provider's
 site
 
 1. by redirecting the client (browser) to the Switchboard site
@@ -10,18 +10,17 @@ site
 
 # 1. Integrated Switchboard popup
 
-The Switchboard popup can be displayed when the user presses a button or link on 
+The Switchboard popup can be displayed when the user presses a button or link on
 the integrator's repository site. The requirements are as follows:
 
-* The repository site must include the Switchboard popup css and js files 
-(usually in the html header): 
+* The repository site must include the Switchboard popup js file
+(usually in the html header):
 ````html
-    <link rel="stylesheet" type="text/css" href="https://switchboard.clarin.eu/popup/switchboardpopup.css" />
-    <script type="text/javascript" defer="defer" src="https://switchboard.clarin.eu/popup/switchboardpopup.js"></script>
+    <script type="text/javascript" src="https://switchboard.clarin.eu/popup/switchboardpopup.js"></script>
 ````
 
-* A button or other element that should display the Switchboard popup when 
-pressed must call the `showSwitchboardPopup` javascript function in the event 
+* A button or other element that should display the Switchboard popup when
+pressed must call the `showSwitchboardPopup` javascript function in the event
 handler:
 
 ````javascript
@@ -31,19 +30,19 @@ showSwitchboardPopup(
 );
 ````
 
-The `showSwitchboardPopup` function has two parameters. The first specifies the 
+The `showSwitchboardPopup` function has two parameters. The first specifies the
 position of the popup in the html page, while the second specifies the resource
-metadata to be sent to the Switchboard. 
+metadata to be sent to the Switchboard.
 
-The first parameter must be an object with the following properties: 
-* `alignSelector` is mandatory and designates the selector for a page element 
-used to position the popup. The popup will be placed right under this element 
-and, by default, will be left-aligned with it. 
-* `alignRight` is optional and can be used to require a right-alignment of the 
+The first parameter must be an object with the following properties:
+* `alignSelector` is mandatory and designates the selector for a page element
+used to position the popup. The popup will be placed right under this element
+and, by default, will be left-aligned with it.
+* `alignRight` is optional and can be used to require a right-alignment of the
 popup with the positioning element.
 
 The second parameter must be an object with the following properties:
-* `origin` is recommended and specifies a name or identifier of the calling 
+* `origin` is recommended and specifies a name or identifier of the calling
 application
 * `url` is mandatory and specifies the actual data url
 * `type` is optional and specifies the media type (MIME type) of the resource
@@ -62,15 +61,32 @@ A full example of a HTML element with a Switchboard event handler:
 </li>
 ````
 
+## Lookup Tools for text selection
+
+The Switchboard popup can function in a "Lookup Tools" special mode. In this mode the Switchboard popup is automatically displayed each time the user selects a text fragment. If the selection consists of up to 3 words, the tools presented to the user are dictionaries, gazetteers, encyclopedias and other reference tools that could provide information on these words.
+
+To enable this mode, the repository site must first include the Switchboard popup js file as described in the preceding section. Currently you have to use the beta version of the Switchboard to access this functionality:
+````html
+    <script type="text/javascript" src="https://beta-switchboard.clarin.eu/popup/switchboardpopup.js"></script>
+````
+
+The javascript function that must be called to enable this mode is `showSwitchboardPopupOnSelection(align, params)`. It must be called once at the **end** of the HTML file, like in this example (but please use a real repository name for the `origin` field):
+
+````html
+    <script>showSwitchboardPopupOnSelection({}, {origin:'unknown'})</script>
+````
+
+This functionality can be also disabled by calling the `disableSwitchboardPopupOnSelection()` function, without any parameters.
+
 ## User interface example
 
-This is how the Switchboard popup looks like when integrated in the 
-[VLO](https://vlo.clarin.eu) repository: 
+This is how the Switchboard popup looks like when integrated in the
+[VLO](https://vlo.clarin.eu) repository:
 ![VLO](../images/popup-integration-example-vlo.png)
 
 # 2. Redirecting the client (browser) to the Switchboard site
 
-A resource provider can connect to the Switchboard by redirecting the client 
+A resource provider can connect to the Switchboard by redirecting the client
 (browser) to the Switchboard site and providing specific information that serves
 as input to the Switchboard's logic in doing so.
 
