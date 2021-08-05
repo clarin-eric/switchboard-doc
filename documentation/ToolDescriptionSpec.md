@@ -1,6 +1,9 @@
 Tool Description Specification, v1.0
 -------------------------------------
 
+**This tool specification version is deprecated, please use v2: [ToolDescriptionSpec_v2](./ToolDescriptionSpec_v2.md)**
+
+
 A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `task`: A short description of a tool's task, e.g. "Constituency Parsing".
@@ -47,7 +50,5 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 For details on how a tool is matched for a specific resource, see the [Tool Matching](./ToolMatching.md) document.
 
 For details on how a tool is actually invoked when selected by the user, see the [Tool Call API](./ToolCallAPI.md) document.
-
-
 
 [1]: https://github.github.com/gfm

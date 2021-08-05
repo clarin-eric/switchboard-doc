@@ -1,6 +1,8 @@
 Tool Calling API v1.0
 ---------------------
 
+**This tool calling specification version is deprecated, please use v2: [ToolCallAPI_v2](./ToolCallAPI_v2.md)**
+
 The [Tool Description Spec](./ToolDescriptionSpec.md) document presents how a tool is specified in Switchboard. The following keys are important for invoking a tool by the Switchboard:
 
 * `url`: The actual url of the tool, used for direct invocation. E.g. `"https://weblicht.sfs.uni-tuebingen.de/weblicht/"`.
