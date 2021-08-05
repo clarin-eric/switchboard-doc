@@ -64,8 +64,13 @@ A full example of a HTML element with a Switchboard event handler:
 </li>
 ````
 
+## General configuration options
+
 The `origin` parameter can also be globally set by calling once the
-`setSwitchboardConfig` javascript function. Other global configurations are:
+`setSwitchboardConfig` javascript function. If globally set, the `origin`
+parameter does not need to be set in other function calls anymore.
+
+Other global configurations are:
 - `switchboardURL` (optional) specifies which switchboard instance to use. It
 is automatically set on initialisation based on the url of the Switchboard
 popup js file, so it's not normally needed.
@@ -73,7 +78,8 @@ popup js file, so it's not normally needed.
 recommended that it ends with "Switchboard", e.g. "CLARIN Switchboard".
 - `origin` (optional) sets the origin parameter described above.
 
-An example invocation could be:
+The `setSwitchboardConfig` function should be invoked once, after the loading 
+of the switchboard popup. An example of such invocation could be:
 ````javascript
 setSwitchboardConfig({origin: 'acme', title: 'ACME Switchboard'});
 ````
