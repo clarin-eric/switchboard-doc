@@ -5,7 +5,7 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `formatVersion` (mandatory): must be set to "2"
 
-* `task` (mandatory): A short description of a tool's task, e.g. "Constituency Parsing".
+* `task` (mandatory): A short description of a tool's task, e.g. "Constituency Parsing". See [below](#lookup-tools) for the special "Lookup Tools" task.
 
 * `deployment` (mandatory): The status of its instance, should be either "production", or "development".
 
@@ -13,7 +13,7 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `name` (mandatory): A short name uniquely describing the tool, e.g. "UDPipe".
 
-* `description` (mandatory): A short (less than 100 words) description of the tool. This field supports [GitHub Markdown][1], except for the HTML blocks.
+* `description` (mandatory): A short (less than 100 words) description of the tool. This field supports [GitHub Markdown](https://github.github.com/gfm), except for the HTML blocks.
 
 * `logo` (mandatory): The name of the logo file, e.g. "weblicht.jpg". The logo files must be stored in the [switchboard-tool-registry](https://github.com/clarin-eric/switchboard-tool-registry) repository, in the "logos" directory.
 
@@ -69,4 +69,6 @@ For details on how a tool is actually invoked when selected by the user, see the
 
 A more formal description can be found in the JSON schema used to verify a tool description file: [JSON schema for Tool Specification](https://github.com/clarin-eric/switchboard-tool-registry/blob/master/schemas/spec-v2.schema.json)
 
-[1]: https://github.github.com/gfm
+### Lookup Tools
+
+The special "Lookup Tools" task describes tools that are used to provide more information about a particular item. The tools belonging to this task are only matched against resources in a special Switchboard mode, which is only accessible from certain sites. The lookup tools usually require as input the content of a resource and not just the data profile (i.e. they use the `content` bind), but are otherwise behaving as all the other tools.
