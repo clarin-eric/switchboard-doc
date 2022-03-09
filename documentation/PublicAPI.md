@@ -5,7 +5,7 @@ The following API endpoints are designed to be publicly available and used by th
 
 ## GET /api/tools
 
-Returns a JSON document with descriptions of all tools registered with the Switchboard. Each tool has a unique (for the Switchboard) numeric ID, which can be used to identify the tool.
+Returns a JSON document with descriptions of all tools registered with the Switchboard, as an array of tool objects. Currently no paging or filtering is implemented. A tool object has the fields described in the [ToolDescriptionSpec_v2.md](./ToolDescriptionSpec_v2.md). Each tool has a unique (for the Switchboard) numeric `id` field, which can be used to identify the tool and which can be used as a url parameter in the `/api/tools/{id}` endpoint (see below).
 
 ## GET /api/tools/{id}
 
@@ -35,6 +35,7 @@ The endpoint returns a list of tools, each tool with one or more possible matche
 
 In addition to these values a tool match also returns a `matches` array, which is a list of possible *mappings* between the input profiles and the tool's input slots. A *mapping* is a list of integers specifying which tool's input slot index fits a data profile. For example, a mapping of `[1, 0, null]` specifies that the user specified three data profiles, of which the first one matches the tool input slot of index 1 (the second input slot); the second data profile matches the tool input slot of index 0 (the first input slot); and the third data profile does not match any input slots of the current tool (it is `null` in the mapping).
 
+No paging or filtering of the results is currently possible.
 
 Single input profile example:
 ```
