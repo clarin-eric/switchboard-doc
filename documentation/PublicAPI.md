@@ -3,6 +3,10 @@ PUBLIC API Specification
 
 The following API endpoints are designed to be publicly available and used by third parties as well as by the frontend itself. The data format used by all the endpoints is JSON.
 
+## GET /api/info
+
+Returns a JSON object with information about the server version, server host, and configuration parameters. Be advised that the schema of the returned data may change from one Switchboard version to the next.
+
 ## GET /api/tools
 
 Returns a JSON document with descriptions of all tools registered with the Switchboard, as an array of tool objects. Currently no paging or filtering is implemented. A tool object has the fields described in the [ToolDescriptionSpec_v2.md](./ToolDescriptionSpec_v2.md). Each tool has a unique (for the Switchboard) numeric `id` field, which can be used to identify the tool and which can be used as a url parameter in the `/api/tools/{id}` endpoint (see below).
