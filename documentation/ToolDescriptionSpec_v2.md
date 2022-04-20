@@ -5,6 +5,8 @@ A Tool is specified in Switchboard by a JSON file, with the following entries:
 
 * `formatVersion` (mandatory): must be set to "2"
 
+* `id` (mandatory): a short number used to identify the tool; must be unique in the set of all tools.
+
 * `task` (mandatory): A short description of a tool's task, e.g. "Constituency Parsing". See [below](#lookup-tools) for the special "Lookup Tools" task.
 
 * `deployment` (mandatory): The status of its instance, should be either "production", or "development".
