@@ -79,6 +79,9 @@ default title is just "Switchboard".
 - `origin` (optional) sets the origin parameter described above. If globally 
 set, this parameter does not need to be set in other function calls anymore.
 
+- `preflightTimeout` (optional) sets the preflight timeout in milliseconds.
+See the [Preflight API] for more information.
+
 The `setSwitchboardConfig` function should be invoked once, after the loading 
 of the switchboard popup, but before invoking other switchboard functions like 
 showing the popup. An example of such invocation could be:
@@ -87,9 +90,52 @@ showing the popup. An example of such invocation could be:
 setSwitchboardConfig({origin: 'acme', title: 'ACME Switchboard'});
 ````
 
+## Preflight API
+
+Sometimes the resource provider displays the Switchboard popup only for the
+user to discover that there are no matching tools for that particular resource.
+To avoid such cases the Switchboard offers the preflight API, which can be used
+to test how many tools a particular resource can match.
+
+When integrating the Switchboard popup, the resource provider can call the
+`testSwitchboardMatches(arrayOfLinksToResources)` javascript function. This
+function returns a promise that resolves to a json object with two keys:
+
+- `timeout`: specifies if a timeout has been triggered
+- `matches`: specifies how many tools the Switchboard matched with the
+specified resource(s).
+
+This function can be invoked after the page loads and its results used to,
+for example, disable the buttons that would display the Switchboard popup
+for some resources; or it can be invoked when the user opens a menu with a
+button that would display the Switchboard popup. However, care must be taken
+so that the users are not unpleasantly surprised by a sudden change in the page
+that would break their motions.
+
+An example of such an invocation would be:
+
+````html
+<li>
+<a href="javascript:;"
+  onclick="testSwitchboardMatches(['http://hdl.handle.net/1234/567890']).then((data) => {
+    if (data.timeout) return;
+    const li = this.parentElement.querySelector('ul li');
+    if (data.matches === 0) li.setAttribute('class', 'disabled');
+    let text = 'Process with Switchboard ';
+    if (data.matches == 0) text += '(no matches)';
+    else if (data.matches == 1) text += '(one match)';
+    else text += `(${data.matches} matches)`;
+    li.querySelector('a span').textContent = text;
+  });">
+    <i class="glyphicon glyphicon-open-file" aria-hidden="true"></i>
+    <span>Switchboard</span>
+</a>
+</li>
+````
+
 ## Lookup Tools for text selection
 
-The Switchboard popup can function in a "Lookup Tools" special mode. In this
+Switchboard popup can function in a "Lookup Tools" special mode. In this
 mode the Switchboard popup is automatically displayed each time the user
 selects a text fragment. If the selection consists of up to 3 words, the tools
 presented to the user are dictionaries, gazetteers, encyclopedias and other
